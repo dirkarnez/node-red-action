@@ -6,8 +6,8 @@ services:
     restart: always
     ports:
       - '1880:1880'
-    volumes:
-      - ./node_red_data:/data
+    # volumes:
+    #   - ./node_red_data:/data
     # environment:
     #   - DISABLE_ADDITIONAL_FEATURES=false
     #   - LANGS=en_GB
