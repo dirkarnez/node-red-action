@@ -58,7 +58,7 @@ jobs:
       #     EOF
       
       - run: |
-          concurrently "./devtunnel host -p 8080 --allow-anonymous --protocol auto" "docker compose up --build"
+          concurrently "./devtunnel host -p 1880 --allow-anonymous --protocol auto" "docker compose up --build"
       
     # # continue-on-error: true
     #   - name: set permission and run
