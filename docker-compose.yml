@@ -1,16 +1,13 @@
 services:
-  stirling-pdf:
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+  node-red:
+    image: nodered/node-red:latest
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    restart: always
     ports:
-      - '8080:8080'
+      - '1880:1880'
     volumes:
-      - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
-      - ./StirlingPDF/extraConfigs:/configs
-      - ./StirlingPDF/customFiles:/customFiles/
-      - ./StirlingPDF/logs:/logs/
-      - ./StirlingPDF/pipeline:/pipeline/
-    environment:
-      - DISABLE_ADDITIONAL_FEATURES=false
-      - LANGS=en_GB
+      - ./node_red_data:/data
+    # environment:
+    #   - DISABLE_ADDITIONAL_FEATURES=false
+    #   - LANGS=en_GB
